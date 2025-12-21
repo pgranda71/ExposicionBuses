@@ -74,14 +74,34 @@
 -  La arquitectura física y lógica de PCIe se organiza alrededor del root complex (chipset), que conecta procesador y memoria con los dispositivos PCIe.
 -  Actúa como buffer para manejar diferencias de velocidad entre controladores de E/S y CPU/memoria, y traduce los formatos de transacción PCIe a las señales del procesador y la memoria. El chipset soporta múltiples puertos PCIe que pueden conectarse directamente a dispositivos, a switches que gestionan varios flujos, o a otros tipos de endpoints.
 
+[[file:Imagenes/ConfPCIe.png]]
+
 * Arquitectura Física y Lógica de PCIe
 
-IMAGEN
 Al igual que QPI, PCIe se organiza en una arquitectura de protocolos en capas:
-    - *Capa física:* cables, señales y circuitería para transmitir bits.
-    - *Capa de enlace de datos:* asegura transmisión confiable y control de flujo (DLLPs).
-    - *Capa de transacción:* gestiona transferencias de datos y control de flujo mediante paquetes (TLPs).
-    - *Capas de software superiores:* generan solicitudes de lectura/escritura que viajan como paquetes hacia los dispositivos de E/S.
+
+- *Capa física:* cables, señales y circuitería para transmitir bits.
+- *Capa de enlace de datos:* asegura transmisión confiable y control de flujo (DLLPs).
+- *Capa de transacción:* gestiona transferencias de datos y control de flujo mediante paquetes (TLPs).
+- *Capas de software superiores:* generan solicitudes de lectura/escritura que viajan como paquetes hacia los dispositivos de E/S.
+
+[[file:Imagenes/PCIeCapaFisica.png]]
+
+* Capa física
+
+- PCIe es una arquitectura punto a punto similar a QPI. Cada puerto PCIe está formado por lanes (carriles) bidireccionales, que transmiten datos mediante señalización diferencial sobre pares de cables. Un puerto puede tener 1, 4, 8, 16 o hasta 32 lanes.
+- A diferencia de QPI, PCIe no usa la línea de reloj para sincronizar los bits, por lo que emplea dos técnicas:
+    *Scrambling:* hace que los datos parezcan aleatorios, evitando largas secuencias de 1s o 0s y mejorando la sincronización.
+    *Encoding 128b/130b:* añade un encabezado de 2 bits para distinguir bloques de datos y bloques de control.
+
+[[file:Imagenes/PCIeCapaFisica2.png]]
+
+* Proceso de transmisión
+- *Scrambler:* aleatoriza los datos.
+- *Encoder 128b/130b:* convierte 128 bits en 130 bits.
+- *Conversión paralelo-serial:* envía los bits uno a uno por señal diferencial.
+- *En el receptor:* sincronización de reloj, conversión serial-paralelo, decodificación y descrambling para recuperar los datos originales.
+Gracias a estas técnicas, PCIe 3.0 alcanza velocidades de hasta 16 GB/s, y cada transmisión comienza y termina con una secuencia de 8 bits de enmarcado para facilitar la sincronización.
 
 * Referencias
 ** Bibliografía
