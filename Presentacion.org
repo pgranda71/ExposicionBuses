@@ -42,21 +42,8 @@
     páginas 116 a 131 [cite:@stallings2022computer].
 - La tupla (E1,7, 97) significa Grupo E1, Libro Edición 7, página 97
   del PDF (no del libro)
-- Las personas que exponen suben la presentación en formato .ORG y
-  .PDF
-- Las personas que atienden suben los apuntes de la clase de acuerdo al
-  formato de toma de notas en .ORG y .PDF
-** Diseño de las Diapositivas
-- Para diseñar sus diapositivas puede consultar cualquiera de las
-  presentaciones .ORG desarrolladas por el profesor así como al
-  archivo [[https://github.com/LeninGF/EPN-Lectures/blob/main/iccd332ArqComp-2024-B/Tutoriales/Beamer-Emacs/tutorialBeamer.org][tutorialBeamer.org]] en el repositorio de [[https://github.com/LeninGF/EPN-Lectures/blob/main/iccd332ArqComp-2024-B/Tutoriales/Beamer-Emacs/tutorialBeamer.org][GitHub]] de la clase.
-- Recuerde que los archivos .ORG son archivos de texto así que los
-  puede copiar y sustituir por su texto propio.
-** Sobre este Documento
-- Este documento tiene la propuesta de temas a tratar y desarrollar
-  por los estudiantes.
-- Se ha de utilizar como base la bibliografía recomendada, pero puede
-  consultar bibliografía adicional.
+
+
 * Buses del Sistema (Sección)
 ** Estructuras de Interconexión (Nombre Diapositiva)(E1, 7, 97)
 * Interconexión con Buses (Sección)
@@ -67,8 +54,35 @@
 * Interconexión punto a punto(E3, 11, 118)
 ** Interconexión punto a punto 
 ** QPI (E3, 11, 120)
-* PCI Express (E4, 11, 123)
-** PCI Express (E4, 11, 123)
+
+** PCI 
+
+- Bus popular de alto ancho de banda, independiente del procesador.
+- Ofrece un mejor rendimiento del sistema para subsistemas de E/S de alta velocidad, por ejemplo : adaptadores gráficos, controladores de red y controladores de disco.
+- PCI (Intel, 1990), Intel comenzó a trabajar en PCI en 1990 para sus sistemas basados en Pentium. Pronto liberó todas las patentes al dominio público y promovió la creación de una asociación industrial, el PCI Special Interest Group (SIG), para desarrollar y mantener la compatibilidad de las especificaciones PCI. Gracias a esto, PCI ha sido ampliamente adoptado y se utiliza cada vez más en computadoras personales, estaciones de trabajo y servidores. 
+- Al estar en dominio público y contar con el apoyo de gran parte de la industria de microprocesadores y periféricos, los productos PCI fabricados por diferentes proveedores son compatibles.
+
+** PCI express
+
+-  PCIe, al igual que QPI, es un esquema de interconexión punto a punto destinado a reemplazar los buses tradicionales como PCI.
+-  Un requisito clave de PCIe es la alta capacidad para soportar dispositivos de E/S de mayor velocidad, como Ethernet Gigabit.
+-  PCIe incorpora mecanismos para manejar flujos de datos en tiempo real, lo cual resulta esencial en aplicaciones como video bajo demanda, distribución de audio, comunicaciones y sistemas embebidos.
+-  PCIe puede gestionar múltiples transferencias simultáneas y priorizar aquellas que requieren atención inmediata, garantizando un rendimiento adecuado en entornos con altas exigencias de velocidad y baja latencia.
+
+* Arquitectura Física y Lógica de PCIe
+
+-  La arquitectura física y lógica de PCIe se organiza alrededor del root complex (chipset), que conecta procesador y memoria con los dispositivos PCIe.
+-  Actúa como buffer para manejar diferencias de velocidad entre controladores de E/S y CPU/memoria, y traduce los formatos de transacción PCIe a las señales del procesador y la memoria. El chipset soporta múltiples puertos PCIe que pueden conectarse directamente a dispositivos, a switches que gestionan varios flujos, o a otros tipos de endpoints.
+
+* Arquitectura Física y Lógica de PCIe
+
+IMAGEN
+Al igual que QPI, PCIe se organiza en una arquitectura de protocolos en capas:
+    - *Capa física:* cables, señales y circuitería para transmitir bits.
+    - *Capa de enlace de datos:* asegura transmisión confiable y control de flujo (DLLPs).
+    - *Capa de transacción:* gestiona transferencias de datos y control de flujo mediante paquetes (TLPs).
+    - *Capas de software superiores:* generan solicitudes de lectura/escritura que viajan como paquetes hacia los dispositivos de E/S.
+
 * Referencias
 ** Bibliografía
 :PROPERTIES:
