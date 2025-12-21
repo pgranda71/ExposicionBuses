@@ -82,7 +82,23 @@
 
 ** Elementos de Diseño de un Bus (E2, 7, 104)
 * Interconexión punto a punto(E3, 11, 118)
-** Interconexión punto a punto 
+** Interconexión punto a punto
+En un inicio se utilizaban los buses compartidos para la interconexión entre el procesador y otros componentes, sin embargo, debido a las limitaciones eléctricas encontradas al aumentar la frecuencia de los buses síncronos anchos, surge la interconexión punto a punto, que ofrece mejor latencia, mayor velocidad de datos y mejor escalabilidad.
+* QuickPath Interconnect (QPI) de Intel
+** Características:
+- Varios componentes del sistema se conectan mediante pares con otros componentes, eliminando la necesidad del arbitraje.
+- Los datos se envían como una secuencia de paquetes con encabezados de control y códigos de control de errores, de forma que la computadora pueda detectar y arreglar errores mientras los datos viajan.
+- Utilizan una arquitectura de protocolo en capas para dividir por niveles de responsabilidad y evitar que los datos se pierdan debido a interferencias.
+* Arquitectura de protocolo en capas
+[[file:Imagenes/ArquiProtocolo.png]]
+- *Capa Física:* Consta de los cables que transportan los bits como señales eléctricas. Su unidad de transferencia es el phit de 20 bits.
+- *Capa de Enlace:* Responsable de que la transmisión sea fiable y utiliza mecanismos de detección de errores. La unidad de transferencia es el flit de 80 bits que se utiliza para el control de errores.
+- *Capa de Enrutamiento:* Define el camino que debe seguir un paquete para llegar al destino.
+- *Capa de Protocolo:* Conjunto de reglas para intercambiar paquetes entre dispositivos.
+** IOH
+Además, le interconexión punto a punto sirve de puente para conectar el procesador con el resto de la computadora a través de un intermediario denominado IOH, el cual convierte el protocolo QPI del procesador al protocolo PCI Express, que es el estándar de todos los dispositivos externos.
+** Memoria RAM
+Sin embargo, la Memoria RAM tiene su propio bus dedicado ya que el procesador necesita leer datos de la RAM a una alta velocidad.
 ** QPI (E3, 11, 120)
 
 ** PCI 
