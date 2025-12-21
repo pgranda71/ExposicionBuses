@@ -106,6 +106,13 @@ Gracias a estas técnicas, PCIe 3.0 alcanza velocidades de hasta 16 GB/s, y cada
 
 [[file:Imagenes/ProcesoDeTransmision.png]]
 
+* Estructura de Paquetes en PCI Express
+
+- *Puntos Clave:* 
+- PCle utiliza una arquitectura basada en capas.
+- La comunicación se realiza mediante paquetes, no solo señales eléctricas
+- Los paquetes principales son TLP y DLLP
+
 * Referencias
 ** Bibliografía
 :PROPERTIES:
