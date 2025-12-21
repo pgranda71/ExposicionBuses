@@ -110,8 +110,33 @@ Gracias a estas técnicas, PCIe 3.0 alcanza velocidades de hasta 16 GB/s, y cada
 
 *Puntos Clave:* 
 - PCle utiliza una arquitectura basada en capas.
-- La comunicación se realiza mediante paquetes, no solo señales eléctricas
-- Los paquetes principales son TLP y DLLP
+- La comunicación se realiza mediante paquetes, no solo señales eléctricas.
+- Los paquetes principales son TLP y DLLP.
+
+* Ensamblaje de Paquetes de Transacción
+El software de capa superior envia datos a la Capa de Transacción(TL).
+*Campos del TLP:* 
+- *Header:* Define el tipo de paquete y la información de enrutamiento.
+- *Data:* Carga útil de hasta 4096 bytes.
+- *ECRC:* Comprobación de errores opcional de extremo a extremo.
+
+* Fiabilidad y Control en el Enlace (DLL)
+Garantizar la entrega fiable de paquetes a través del enlace PCIe.
+*Funciones principales:* 
+- Añade un número de secuencia (16 bits) y un LCRC (32 bits) al TLP.
+- Gestiona los DLLP (Data Link Layer Packets) para control del enlace.
+*Tipos de DLLP:* 
+- Paquetes de Control de Flujo (Flow Control).
+- Gestión de Energía (Power Management).
+- ACK/NAK (Confirmación de recepción o error).
+
+* ¿Cómo viaja un paquete?
+*En cada nodo intermedio (Switch):* 
+- La capa de enlace (DLL) comprueba el LCRC y el número de secuencia.
+- Si no hay errores: Pasa el paquete a la capa de transacción para ser enrutado.
+- Si hay errores: Se pide retransmisión (NAK).
+*En el destino:* 
+- La capa de transacción procesa los datos y los entrega al software.
 
 * Referencias
 ** Bibliografía
