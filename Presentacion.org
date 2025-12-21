@@ -97,11 +97,14 @@ Al igual que QPI, PCIe se organiza en una arquitectura de protocolos en capas:
 [[file:Imagenes/PCIeCapaFisica2.png]]
 
 * Proceso de transmisión
+
 - *Scrambler:* aleatoriza los datos.
 - *Encoder 128b/130b:* convierte 128 bits en 130 bits.
 - *Conversión paralelo-serial:* envía los bits uno a uno por señal diferencial.
 - *En el receptor:* sincronización de reloj, conversión serial-paralelo, decodificación y descrambling para recuperar los datos originales.
 Gracias a estas técnicas, PCIe 3.0 alcanza velocidades de hasta 16 GB/s, y cada transmisión comienza y termina con una secuencia de 8 bits de enmarcado para facilitar la sincronización.
+
+[[file:Imagenes/ProcesoDeTransmision.png]]
 
 * Referencias
 ** Bibliografía
