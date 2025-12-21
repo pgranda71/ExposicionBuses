@@ -55,7 +55,7 @@
 - Grupo de 50 a 100 líneas metálicas independientes.
 - Canal único; solo un dispositivo transmite a la vez.
 
-file:Imagenes/EsquemaInterconexionBus.png
+[[file:Imagenes/EsquemaInterconexionBus.png]]
 
 ** Clasificación de líneas
 - *Líneas de Datos*: Camino físico para el transporte de datos/bits.
@@ -83,7 +83,7 @@ file:Imagenes/EsquemaInterconexionBus.png
 - *Evolución*: De chasis modulares a integración *On-chip* y
   *On-board
   
-file:Imagenes/ImplentacionFisicaBus.png
+[[file:Imagenes/ImplentacionFisicaBus.png]]
   
 ** Jerarquía de Buses Múltiples (E2, 7, 102)
 ** Elementos de Diseño de un Bus (E2, 7, 104)
