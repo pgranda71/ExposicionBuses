@@ -81,10 +81,10 @@
 [[file:Imagenes/ImporBus.png]]
 
 ** Elementos de Diseño de un Bus (E2, 7, 104)
-* Interconexión punto a punto(E3, 11, 118)
+* Interconexión punto a punto
 ** Interconexión punto a punto
 En un inicio se utilizaban los buses compartidos para la interconexión entre el procesador y otros componentes, sin embargo, debido a las limitaciones eléctricas encontradas al aumentar la frecuencia de los buses síncronos anchos, surge la interconexión punto a punto, que ofrece mejor latencia, mayor velocidad de datos y mejor escalabilidad.
-* QuickPath Interconnect (QPI) de Intel
+* QuickPath Interconnect de Intel (QPI)
 ** Características:
 - Varios componentes del sistema se conectan mediante pares con otros componentes, eliminando la necesidad del arbitraje.
 - Los datos se envían como una secuencia de paquetes con encabezados de control y códigos de control de errores, de forma que la computadora pueda detectar y arreglar errores mientras los datos viajan.
