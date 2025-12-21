@@ -67,6 +67,7 @@
 - Esta organización jerárquica permite una comunicación más eficiente entre los distintos componentes del sistema [cite:@stallings2006].
 
 ** Organización por niveles – Diagrama
+#+CAPTION:
 #+ATTR_LATEX: :width 0.85\linewidth
 [[file:Imagenes/OrganBuses.png]]
 
@@ -77,6 +78,7 @@
 - La jerarquía de buses múltiples es utilizada en la mayoría de arquitecturas de computadoras modernas [cite:@stallings2022computer].
 
 ** Importancia – Diagrama
+#+CAPTION:
 #+ATTR_LATEX: :width 0.85\linewidth
 [[file:Imagenes/ImporBus.png]]
 
