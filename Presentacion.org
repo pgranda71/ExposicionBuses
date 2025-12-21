@@ -161,6 +161,9 @@ Gracias a estas técnicas, PCIe 3.0 alcanza velocidades de hasta 16 GB/s, y cada
 
 * Ensamblaje de Paquetes de Transacción
 El software de capa superior envia datos a la Capa de Transacción(TL).
+
+[[file:Imagenes/DiagramaTLP.png]]
+
 *Campos del TLP:* 
 - *Header:* Define el tipo de paquete y la información de enrutamiento.
 - *Data:* Carga útil de hasta 4096 bytes.
