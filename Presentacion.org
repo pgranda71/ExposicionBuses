@@ -50,6 +50,23 @@
 ** Interconexión con Buses (E1, 7, 99)
 ** Estructura del Bus  (E1, 7, 99)
 ** Jerarquía de Buses Múltiples (E2, 7, 102)
+*** Definición
+[[file:Imagenes/Jerarquia.png]]
+- La jerarquía de buses múltiples organiza los buses del sistema en distintos niveles.
+- Cada nivel se diferencia por su velocidad, función y tipo de dispositivos conectados.
+- Su objetivo es mejorar el rendimiento del sistema y evitar cuellos de botella.
+
+*** Organización por niveles
+[[file:Imagenes/OrganBuses.png]]
+- Buses de alta velocidad: conectan la CPU con la memoria principal.
+- Buses de velocidad media: permiten la conexión de tarjetas y dispositivos de expansión.
+- Buses de baja velocidad: se usan para entrada y salida, como teclado, mouse y almacenamiento.
+  
+*** Importancia
+[[file:Imagenes/ImporBus.png]]
+- Optimiza el flujo de datos dentro del sistema.
+- Evita que dispositivos lentos afecten a los más rápidos.
+- Es utilizada en la mayoría de computadoras modernas.
 ** Elementos de Diseño de un Bus (E2, 7, 104)
 * Interconexión punto a punto(E3, 11, 118)
 ** Interconexión punto a punto 
