@@ -74,7 +74,9 @@ Esta permite varios tipos de transferencia:
 
 * Interconexión con Buses (Sección)
 ** Interconexión con Buses (E1, 7, 99)
-- Bus = camino de comunicación común
+¿Cómo se implementa realmente esta comunicación?
+
+- Bus = camino de comunicación que conecta varios dispositivos
 - Medio compartido (todos ven la información)
 - Solo un dispositivo transmite a la vez
 - Bus del sistema conecta CPU, Memoria y E/S
