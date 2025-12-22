@@ -50,7 +50,6 @@
 - Procesador (CPU): ejecuta y controla
 - Memoria: guarda datos e instrucciones
 - Entrada / Salida (E/S): conecta con el exterior
-- Interconexión = líneas que permiten comunicarse
 
 Ejemplos:
 - CPU → cerebro
@@ -59,6 +58,11 @@ Ejemplos:
 
 
 ** Intercambio de Información
+¿Cómo se comunican estos módulos?
+El conjunto de lineas que permite esa comunicación se llama estructuras de interconexión.
+
+Esta permite varios tipos de transferencia: 
+
 | Origen   | Destino   | Ejemplo                     |
 |----------+-----------+-----------------------------|
 | Memoria  | CPU       | Leer instrucciones          |
