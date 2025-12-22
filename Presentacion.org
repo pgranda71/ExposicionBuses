@@ -21,11 +21,16 @@
 #+cite_export: biblatex
 
 #+bibliography: ./FormatoTareas/bibliography.bib
+#+LATEX_HEADER: \usepackage[spanish]{babel}
+#+LATEX_HEADER: \usepackage[backend=biber,citestyle=apa, style=apa]{biblatex}
 #+LATEX_HEADER: \usepackage[T1]{fontenc}
 #+LATEX_HEADER: \usepackage[utf8]{inputenc}
 #+LATEX_HEADER: \usepackage[spanish]{babel}
-#+LATEX_HEADER: \usepackage[backend=biber,citestyle=apa, style=apa]{biblatex}
-
+#+LATEX_HEADER: \usepackage[backend=biber, style=apa]{biblatex}
+#+LATEX_HEADER: \setbeamertemplate{navigation symbols}{}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+PROPERTY: header-args :eval no
+#+LATEX_HEADER: \setkeys{Gin}{width=\linewidth,height=0.7\textheight,keepaspectratio}
 
 * Buses del Sistema
 ** Estructuras de Interconexión 
@@ -82,7 +87,7 @@ Ejemplo:
 - Conjunto de líneas que interconectan CPU, Memoria y E/S.
 - Grupo de 50 a 100 líneas metálicas independientes.
 - Canal único; solo un dispositivo transmite a la vez.
-
+#+ATTR_LATEX: :width 0.6\linewidth
 [[file:Imagenes/EsquemaInterconexionBus.png]]
 
 ** Clasificación de líneas
@@ -222,6 +227,8 @@ Sin embargo, la Memoria RAM tiene su propio bus dedicado ya que el procesador ne
 -  La arquitectura física y lógica de PCIe se organiza alrededor del root complex (chipset), que conecta procesador y memoria con los dispositivos PCIe.
 -  Actúa como buffer para manejar diferencias de velocidad entre controladores de E/S y CPU/memoria, y traduce los formatos de transacción PCIe a las señales del procesador y la memoria. El chipset soporta múltiples puertos PCIe que pueden conectarse directamente a dispositivos, a switches que gestionan varios flujos, o a otros tipos de endpoints.
 
+* Arquitectura Física y Lógica de PCIe
+#+ATTR_LATEX: :width 0.6\linewidth
 [[file:Imagenes/ConfPCIe.png]]
 
 * Arquitectura Física y Lógica de PCIe
@@ -233,6 +240,8 @@ Al igual que QPI, PCIe se organiza en una arquitectura de protocolos en capas:
 - *Capa de transacción:* gestiona transferencias de datos y control de flujo mediante paquetes (TLPs).
 - *Capas de software superiores:* generan solicitudes de lectura/escritura que viajan como paquetes hacia los dispositivos de E/S.
 
+* Arquitectura Física y Lógica de PCIe
+#+ATTR_LATEX: :width 0.6\linewidth
 [[file:Imagenes/PCIeCapaFisica.png]]
 
 * Capa física
@@ -242,6 +251,8 @@ Al igual que QPI, PCIe se organiza en una arquitectura de protocolos en capas:
     *Scrambling:* hace que los datos parezcan aleatorios, evitando largas secuencias de 1s o 0s y mejorando la sincronización.
     *Encoding 128b/130b:* añade un encabezado de 2 bits para distinguir bloques de datos y bloques de control.
 
+* Capa física
+#+ATTR_LATEX: :width 0.6\linewidth
 [[file:Imagenes/PCIeCapaFisica2.png]]
 
 * Proceso de transmisión
@@ -252,6 +263,8 @@ Al igual que QPI, PCIe se organiza en una arquitectura de protocolos en capas:
 - *En el receptor:* sincronización de reloj, conversión serial-paralelo, decodificación y descrambling para recuperar los datos originales.
 Gracias a estas técnicas, PCIe 3.0 alcanza velocidades de hasta 16 GB/s, y cada transmisión comienza y termina con una secuencia de 8 bits de enmarcado para facilitar la sincronización.
 
+* Proceso de transmisión
+#+ATTR_LATEX: :width 0.6\linewidth
 [[file:Imagenes/ProcesoDeTransmision.png]]
 
 * Estructura de Paquetes en PCI Express
