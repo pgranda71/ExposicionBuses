@@ -11,7 +11,7 @@
 #+title: S8-Buses-del-Sistema
 #+date: 2025-12-22
 <<<<<<< HEAD
-#+author: Paula Granda, Jeriel López
+#+author: Paula Granda, Jeriel López, Ismael Alomoto
 #+email: paula.granda@epn.edu.ec
 =======
 #+author: Paula Granda, Elvis Carlosama, Jhon Tiupul, Erick Páez
@@ -141,7 +141,7 @@ Ejemplo:
 *** Definición
 - La jerarquía de buses múltiples organiza los buses del sistema en distintos niveles, de acuerdo con la velocidad y la función de los componentes conectados.
 - Este esquema surge como respuesta a las limitaciones de rendimiento de un bus único compartido.
-- Su objetivo principal es mejorar el rendimiento general del sistema y reducir los cuellos de botella, separando la comunicación rápida de la lenta [cite:@stallings2006; @stallings2022computer].
+- Su objetivo principal es mejorar el rendimiento general del sistema y reducir los cuellos de botella, separando la comunicación rápida de la lenta.
 
 ** Jerarquía de Buses Múltiples – Esquema
 #+ATTR_LATEX: :width 0.8\linewidth
@@ -151,7 +151,7 @@ Ejemplo:
 - Buses de alta velocidad: conectan el procesador con la memoria principal y la caché.
 - Buses de velocidad media: permiten la conexión de tarjetas y controladores especializados.
 - Buses de baja velocidad: se emplean para dispositivos de entrada y salida como almacenamiento, red y periféricos.
-- Esta organización jerárquica permite una comunicación más eficiente entre los distintos componentes del sistema [cite:@stallings2006].
+- Esta organización jerárquica permite una comunicación más eficiente entre los distintos componentes del sistema.
 
 ** Organización por niveles – Diagrama
 #+CAPTION:
@@ -162,7 +162,7 @@ Ejemplo:
 - Evita que los dispositivos lentos afecten el desempeño del procesador y la memoria.
 - Reduce la congestión de datos al distribuir el tráfico entre diferentes buses.
 - Mejora la eficiencia y escalabilidad del sistema.
-- La jerarquía de buses múltiples es utilizada en la mayoría de arquitecturas de computadoras modernas [cite:@stallings2022computer].
+- La jerarquía de buses múltiples es utilizada en la mayoría de arquitecturas de computadoras modernas.
 
 ** Importancia – Diagrama
 #+CAPTION:
