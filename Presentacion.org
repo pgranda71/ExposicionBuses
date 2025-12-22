@@ -10,7 +10,7 @@
 
 #+title: S8-Buses-del-Sistema
 #+date: 2025-12-22
-#+author: Paula Granda,
+#+author: Paula Granda, Jeriel López
 #+email: paula.granda@epn.edu.ec
 #+language: es
 #+select_tags: export
@@ -113,6 +113,30 @@ Ejemplo:
 [[file:Imagenes/ImporBus.png]]
 
 ** Elementos de Diseño de un Bus (E2, 7, 104)
+*** Definicion
+- Son las decisiones claves que determinan ¿Cómo funcionan? ¿Qué tan rapidos son? y ¿Cómo se conectan los dispositivos?
+*** Tipos de Bus
+- Las líneas de bus se pueden clasificar en dos tipos genericos
+- *Dedicadas:* Estan autorizadas permanentemente para un función, no se comparte con otras funciones.
+- *Multiplexadas:* Se le asignan varias funciones según ciertos parámetros, por lo que cambian de funsion segun el momento.
+*** Método de Arbitraje
+- En la mayoria de sistemas, mas de un modulo puede requerir el control del Bus, por lo tanto se requiere algun metodo de arbitraje,un esquema.
+- *Esquema centralizado:* Un unico dispositivo, definido como controlador o arbitro del Bus, asigna el tiempo.
+- *Esquema distribuido:* No existe controlador central, cada modulo incluye la logica de control de acceso  colabora en la transferencia del bus.
+*** Timing(Sincronizacion)
+- Define como se sincronizan los eventos en el bus, cuando se activan y cuando no.
+- *Síncrono:* Las circunstancias de los eventos en el bus se mantienen mendiante una señal de reloj.
+  [[file:Imagenes/synchronous.jpg]]
+- *Asíncrono:* Las circunstancias de un evento en un Bus se basan en las circunstancias de un evento anterior.
+  [[file:Imagenes/asynchronous.jpg]]
+*** Ancho del Bus
+- Cantidad de bits que un Bus puede transmitir simultáneamente en una sola operación.
+- *Ancho del bus de datos:* Número de bits que se transfieren en paralelo.
+- *Ancho del bus de direcciones:* Número de bits usados para direccionar memoria.
+*** Tipos de transferencia de datos
+- Describe como se mueve los datos entre la CPU, la memoria y los dispositivos de entrada/salida.
+- *Maestro-esclavo:* El maestro inicia,controla y finaliza la comunicación, el esclavo solo responde a las órdenes
+- *Esclavo-maestro:* El esclavo solicita el control del bus, se convierte temporalmente en maestro, y realiza la transferencia de datos.
 * Interconexión punto a punto
 ** Interconexión punto a punto
 En un inicio se utilizaban los buses compartidos para la interconexión entre el procesador y otros componentes, sin embargo, debido a las limitaciones eléctricas encontradas al aumentar la frecuencia de los buses síncronos anchos, surge la interconexión punto a punto, que ofrece mejor latencia, mayor velocidad de datos y mejor escalabilidad.
