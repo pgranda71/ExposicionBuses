@@ -1,4 +1,4 @@
-#+options: H:2
+|||||||||||||||||||||||||||#+options: H:2
 #+latex_class: beamer
 #+columns: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
 #+beamer_theme: default
