@@ -14,8 +14,8 @@
 #+author: Paula Granda, Jeriel López
 #+email: paula.granda@epn.edu.ec
 =======
-#+author: Paula Granda, Elvis Carlosama, Jhon Tiupul
-#+email: paula.granda@epn.edu.ec, elvis.carlosama@epn.edu.ec, jhon.tiupul@epn.edu.ec
+#+author: Paula Granda, Elvis Carlosama, Jhon Tiupul, Erick Páez
+#+email: paula.granda@epn.edu.ec, elvis.carlosama@epn.edu.ec, jhon.tiupul@epn.edu.ec, erick.paez@epn.edu.ec
 >>>>>>> 2505a3ae8f18eede799c53c4c82c9e02a08fe83c
 #+language: es
 #+select_tags: export
