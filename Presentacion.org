@@ -10,8 +10,13 @@
 
 #+title: S8-Buses-del-Sistema
 #+date: 2025-12-22
+<<<<<<< HEAD
 #+author: Paula Granda, Jeriel López
 #+email: paula.granda@epn.edu.ec
+=======
+#+author: Paula Granda, Elvis Carlosama, Jhon Tiupul
+#+email: paula.granda@epn.edu.ec, elvis.carlosama@epn.edu.ec, jhon.tiupul@epn.edu.ec
+>>>>>>> 2505a3ae8f18eede799c53c4c82c9e02a08fe83c
 #+language: es
 #+select_tags: export
 #+exclude_tags: noexport
@@ -46,11 +51,10 @@
 
 * Buses del Sistema (Sección)
 ** Estructuras de Interconexión (Nombre Diapositiva)(E1, 7, 97)
-- Un computador es un conjunto de módulos
+- Un computador formado por tres módulos fundamentales
 - Procesador (CPU): ejecuta y controla
 - Memoria: guarda datos e instrucciones
 - Entrada / Salida (E/S): conecta con el exterior
-- Interconexión = líneas que permiten comunicarse
 
 Ejemplos:
 - CPU → cerebro
@@ -59,21 +63,38 @@ Ejemplos:
 
 
 ** Intercambio de Información
-| Origen   | Destino   | Ejemplo                     |
-|----------+-----------+-----------------------------|
-| Memoria  | CPU       | Leer instrucciones          |
-| CPU      | Memoria   | Guardar resultados          |
-| E/S      | CPU       | Teclado, mouse              |
-| CPU      | E/S       | Pantalla, impresora         |
-| Memoria  | E/S       | DMA (transferencia directa) |
+¿Cómo se comunican estos módulos?
+
+El conjunto de lineas que permite esa comunicación se llama estructuras de interconexión.
+
+Esta permite varios tipos de transferencia: 
+
+| Origen   | Destino   | Ejemplo                                     |
+|----------+-----------+---------------------------------------------|
+| CPU      | Memoria   | Guardar resultados                          |
+| Memoria  | CPU       | CPU lee instrucciones para ejecutarla       |
+| CPU      | E/S       | CPU envía información a pantalla, impresora |
+| E/S      | CPU       | Tecla que presionamos                       |
+| Memoria  | E/S       | DMA (acceso directo a memoria)              |
 
 * Interconexión con Buses (Sección)
 ** Interconexión con Buses (E1, 7, 99)
+<<<<<<< HEAD
 
 - Bus = camino de comunicación común
 - Medio compartido (todos ven la información)
 - Solo un dispositivo transmite a la vez
+=======
+¿Cómo se implementa realmente esta comunicación?
+
+- Bus = camino de comunicación que conecta varios dispositivos
+- Característica- Medio compartido (todos ven la información)
+- En un Bus solo un dispositivo transmite a la vez
+- No es solo un cable. Formado por varias líneas.
+- Varios tipos de buses.
+>>>>>>> 2505a3ae8f18eede799c53c4c82c9e02a08fe83c
 - Bus del sistema conecta CPU, Memoria y E/S
+- Sistema integrado y no como partes aisladas.
 
 Ejemplo:
 - Bus = carretera interna
