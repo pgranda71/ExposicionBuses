@@ -46,7 +46,7 @@
 
 * Buses del Sistema (Sección)
 ** Estructuras de Interconexión (Nombre Diapositiva)(E1, 7, 97)
-- Un computador es un conjunto de módulos
+- Un computador formado por tres módulos fundamentales
 - Procesador (CPU): ejecuta y controla
 - Memoria: guarda datos e instrucciones
 - Entrada / Salida (E/S): conecta con el exterior
