@@ -77,7 +77,7 @@ Esta permite varios tipos de transferencia:
 ¿Cómo se implementa realmente esta comunicación?
 
 - Bus = camino de comunicación que conecta varios dispositivos
-- Medio compartido (todos ven la información)
+- Característica- Medio compartido (todos ven la información)
 - Solo un dispositivo transmite a la vez
 - Bus del sistema conecta CPU, Memoria y E/S
 
