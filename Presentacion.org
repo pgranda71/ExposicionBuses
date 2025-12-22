@@ -69,6 +69,7 @@ Ejemplos:
 
 * Interconexión con Buses (Sección)
 ** Interconexión con Buses (E1, 7, 99)
+
 - Bus = camino de comunicación común
 - Medio compartido (todos ven la información)
 - Solo un dispositivo transmite a la vez
@@ -79,6 +80,41 @@ Ejemplo:
 - Bus = pizarra compartida
 
 ** Estructura del Bus  (E1, 7, 99)
+** Definición y función
+- Conjunto de líneas que interconectan CPU, Memoria y E/S.
+- Grupo de 50 a 100 líneas metálicas independientes.
+- Canal único; solo un dispositivo transmite a la vez.
+
+[[file:Imagenes/EsquemaInterconexionBus.png]]
+
+** Clasificación de líneas
+- *Líneas de Datos*: Camino físico para el transporte de datos/bits.
+- *Líneas de Dirección*: Identificación del origen o destino del dato.
+- *Líneas de Control*: Gestión de acceso y coordinación de los otros buses.
+- *Líneas de Alimentación*: Suministra energía a los módulos
+  conectados.
+  
+** Señales de control
+- *Escritura en memoria (Memory write)*
+- *Lectura de memoria (Memory read)*
+- *Escritura de E/S (I/O write)*
+- *Lectura de E/S (I/O read)*
+- *Transferencia reconocida (Transfer ACK)*
+- *Petición de bus (Bus request)*
+- *Cesión de bus (Bus grant)*
+- *Petición de interrupción (Interrupt request)*
+- *Interrupción reconocida (Interrupt ACK)*
+- *Reloj (Clock)*
+- *Inicio (Reset)*
+  
+** Estructura y evolución
+- *Líneas metálicas*: Conductores grabados en tarjetas de circuito impreso.
+- *Ranuras (Slots)*: Conexión modular para expansión y reparación.
+- *Evolución*: De chasis modulares a integración *On-chip* y
+  *On-board
+  
+[[file:Imagenes/ImplentacionFisicaBus.png]]
+  
 ** Jerarquía de Buses Múltiples (E2, 7, 102)
 
 *** Definición
