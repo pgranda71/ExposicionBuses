@@ -186,8 +186,10 @@ El QPI no solo conecta núcleos entre sí, sino que vincula los procesadores con
 - Los flits de 80 bits se dividen y se envían a través de los carriles físicos en formato ¨round-robin¨.
 * Arquitectura de protocolo en capas
 [[file:Imagenes/ArquiProtocolo.png]]
-- *Capa Física:* Consta de los cables que transportan los bits como señales eléctricas. Su unidad de transferencia es el phit de 20 bits.
+- *Capa Física:* Consta de los cables que transportan los bits como señales eléctricas. Su unidad de transferencia es el phit de 20 bits. Contiene la señalizacion diferencial de bajo voltaje(LVDS).
+[[file:Imagenes/physical layer.png]]
 - *Capa de Enlace:* Responsable de que la transmisión sea fiable y utiliza mecanismos de detección de errores. La unidad de transferencia es el flit de 80 bits que se utiliza para el control de errores.
+[[file:Imagenes/link layer.png]]
 - *Capa de Enrutamiento:* Define el camino que debe seguir un paquete para llegar al destino.
 - *Capa de Protocolo:* Conjunto de reglas para intercambiar paquetes entre dispositivos.
 ** IOH
