@@ -173,12 +173,14 @@ Ejemplo:
 - Describe como se mueve los datos entre la CPU, la memoria y los dispositivos de entrada/salida.
 - *Maestro-esclavo:* El maestro inicia,controla y finaliza la comunicación, el esclavo solo responde a las órdenes
 - *Esclavo-maestro:* El esclavo solicita el control del bus, se convierte temporalmente en maestro, y realiza la transferencia de datos.
+
 * Interconexión punto a punto
 ** Interconexión punto a punto
 En un inicio se utilizaban los buses compartidos para la interconexión entre el procesador y otros componentes, sin embargo, debido a las limitaciones eléctricas encontradas al aumentar la frecuencia de los buses síncronos anchos, surge la interconexión punto a punto, que ofrece mejor latencia, mayor velocidad de datos y mejor escalabilidad.
+
 * QuickPath Interconnect de Intel (QPI)
-EL QPI fue diseñada para superar las limitaciones de los buses antiguos en sistemas de alto reendimiento y multinúcleo. 
-El QPI no solo conecta núcleos entre sí, sino que vincula los procesadores con un I/O Hub (IOH), donde actúa como traductor entre el protocolo QPI y los dispositivos periféricos que usan PCI Express. 
+EL QPI fue diseñada para superar las limitaciones de los buses antiguos en sistemas de alto reendimiento y multinúcleo.
+
 ** Características:
 - Varios componentes del sistema se conectan mediante pares con otros componentes, eliminando la necesidad del arbitraje.
 - Los datos se envían como una secuencia de paquetes con encabezados de control y códigos de control de errores, de forma que la computadora pueda detectar y arreglar errores mientras los datos viajan.
@@ -186,6 +188,12 @@ El QPI no solo conecta núcleos entre sí, sino que vincula los procesadores con
 - Un puerto QPI opera a 6.4 GT/s transferencias por segundo.
 - Cada puerto tiene 20 carriles de datos y una de reloj en cada dirrección.
 - Los flits de 80 bits se dividen y se envían a través de los carriles físicos en formato ¨round-robin¨.
+
+* IOH
+Además, le interconexión punto a punto sirve de puente para conectar el procesador con el resto de la computadora a través de un intermediario denominado IOH, el cual convierte el protocolo QPI del procesador al protocolo PCI Express, que es el estándar de todos los dispositivos externos.
+** Memoria RAM
+Sin embargo, la Memoria RAM tiene su propio bus dedicado ya que el procesador necesita leer datos de la RAM a una alta velocidad.
+
 * Arquitectura de protocolo en capas
 #+ATTR_LATEX: :width 0.7\linewidth
 [[file:Imagenes/ArquiProtocolo.png]]
@@ -197,10 +205,6 @@ El QPI no solo conecta núcleos entre sí, sino que vincula los procesadores con
 [[file:Imagenes/link%20layer.png]]
 - *Capa de Enrutamiento:* Define el camino que debe seguir un paquete para llegar al destino.
 - *Capa de Protocolo:* Conjunto de reglas para intercambiar paquetes entre dispositivos.
-** IOH
-Además, le interconexión punto a punto sirve de puente para conectar el procesador con el resto de la computadora a través de un intermediario denominado IOH, el cual convierte el protocolo QPI del procesador al protocolo PCI Express, que es el estándar de todos los dispositivos externos.
-** Memoria RAM
-Sin embargo, la Memoria RAM tiene su propio bus dedicado ya que el procesador necesita leer datos de la RAM a una alta velocidad.
 
 ** PCI 
 
