@@ -287,9 +287,10 @@ Garantizar la entrega fiable de paquetes a través del enlace PCIe.
 
 * Referencias
 ** Bibliografía
-:PROPERTIES:
-:BEAMER_opt: allowframebreaks
-:END:
+:PROPERTIES: :BEAMER_opt: allowframebreaks :END: 
+Stallings, W. (2006). *Arquitectura de computadores y organización* (7ª ed., pp. 99–119). Pearson Educación.
+
+Stallings, W. (2022). *Computer organization and architecture* (11th ed., pp. 116–131). Pearson.
 
 #+print_bibliography: 
 
