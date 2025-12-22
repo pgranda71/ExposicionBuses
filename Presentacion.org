@@ -11,8 +11,8 @@
 #+title: S8-Buses-del-Sistema
 #+date: 2025-12-22
 
-#+author: Paula Granda, Elvis Carlosama, Jhon Tiupul, Erick Páez, Ismael Alomoto
-#+email: paula.granda@epn.edu.ec, elvis.carlosama@epn.edu.ec, jhon.tiupul@epn.edu.ec, erick.paez@epn.edu.ec
+#+author: Paula Granda, Elvis Carlosama, Jhon Tiupul, Erick Páez, Ismael Alomoto, Karely Bombon, Azaela Chango, Ethan López
+#+email: paula.granda@epn.edu.ec, elvis.carlosama@epn.edu.ec, jhon.tiupul@epn.edu.ec, erick.paez@epn.edu.ec, ismael.alomoto@epn.edu.ec, karely.bombon@epn.edu.ec, azaela.chango@epn.edu.ec, ethan.lopez@epn.edu.ec
 
 #+language: es
 #+select_tags: export
@@ -27,27 +27,11 @@
 #+LATEX_HEADER: \usepackage[backend=biber,citestyle=apa, style=apa]{biblatex}
 
 
-* Indicaciones
-** Indicaciones
-:PROPERTIES:
-:BEAMER_opt: allowframebreaks
-:END:
-- Recuerde que si options: H:2, entonces: 
-  - ~*~ Declara el nombre de la Sección
-  - ~**~ Declara el nombre de la diapositiva
-- Puede alterar la estructura de la diapositiva si lo considera
-  necesario
-- Para este tema consulte las siguientes fuentes:
-  - \textcite{stallings2006}, 7ma edición, 2006, Español, páginas 99 a
-    119 [cite:@stallings2006].
   - \textcite{stallings2022computer}, 11ava edición, 2022, English,
     páginas 116 a 131 [cite:@stallings2022computer].
-- La tupla (E1,7, 97) significa Grupo E1, Libro Edición 7, página 97
-  del PDF (no del libro)
 
-
-* Buses del Sistema (Sección)
-** Estructuras de Interconexión (Nombre Diapositiva)(E1, 7, 97)
+* Buses del Sistema
+** Estructuras de Interconexión 
 - Un computador formado por tres módulos fundamentales
 - Procesador (CPU): ejecuta y controla
 - Memoria: guarda datos e instrucciones
@@ -74,8 +58,8 @@ Esta permite varios tipos de transferencia:
 | E/S      | CPU       | Tecla que presionamos                       |
 | Memoria  | E/S       | DMA (acceso directo a memoria)              |
 
-* Interconexión con Buses (Sección)
-** Interconexión con Buses (E1, 7, 99)
+* Interconexión con Buses 
+** Interconexión con Buses 
 
 
 - Bus = camino de comunicación común
@@ -96,7 +80,7 @@ Ejemplo:
 - Bus = carretera interna
 - Bus = pizarra compartida
 
-** Estructura del Bus  (E1, 7, 99)
+** Estructura del Bus  
 ** Definición y función
 - Conjunto de líneas que interconectan CPU, Memoria y E/S.
 - Grupo de 50 a 100 líneas metálicas independientes.
@@ -132,7 +116,7 @@ Ejemplo:
   
 [[file:Imagenes/ImplentacionFisicaBus.png]]
   
-** Jerarquía de Buses Múltiples (E2, 7, 102)
+** Jerarquía de Buses Múltiples 
 
 *** Definición
 - La jerarquía de buses múltiples organiza los buses del sistema en distintos niveles, de acuerdo con la velocidad y la función de los componentes conectados.
@@ -165,7 +149,7 @@ Ejemplo:
 #+ATTR_LATEX: :width 0.85\linewidth
 [[file:Imagenes/ImporBus.png]]
 
-** Elementos de Diseño de un Bus (E2, 7, 104)
+** Elementos de Diseño de un Bus 
 *** Definicion
 - Son las decisiones claves que determinan ¿Cómo funcionan? ¿Qué tan rapidos son? y ¿Cómo se conectan los dispositivos?
 *** Tipos de Bus
