@@ -1,4 +1,4 @@
-|||||||||||||||||||||||||||#+options: H:2
+
 #+latex_class: beamer
 #+columns: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
 #+beamer_theme: default
@@ -10,13 +10,9 @@
 
 #+title: S8-Buses-del-Sistema
 #+date: 2025-12-22
-<<<<<<< HEAD
-#+author: Paula Granda, Jeriel López
-#+email: paula.granda@epn.edu.ec
-=======
-#+author: Paula Granda, Elvis Carlosama, Jhon Tiupul
-#+email: paula.granda@epn.edu.ec, elvis.carlosama@epn.edu.ec, jhon.tiupul@epn.edu.ec
->>>>>>> 2505a3ae8f18eede799c53c4c82c9e02a08fe83c
+#+author: Paula Granda, Elvis Carlosama, Jhon Tiupul,Jeriel Lopez
+#+email: paula.granda@epn.edu.ec, elvis.carlosama@epn.edu.ec, jhon.tiupul@epn.edu.ec, jerielopez04@gmail.com
+
 #+language: es
 #+select_tags: export
 #+exclude_tags: noexport
