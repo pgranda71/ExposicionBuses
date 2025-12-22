@@ -1,0 +1,305 @@
+#+options: H:2 toc:nil
+#+latex_class: beamer
+#+columns: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
+#+beamer_theme: default
+#+beamer_color_theme: default
+#+beamer_font_theme: professionalfonts
+#+beamer_inner_theme: rounded
+#+beamer_outer_theme: infolines
+#+beamer_header: \setbeamertemplate{navigation symbols}{}
+
+#+title: Buses-del-Sistema
+#+date: 2025-12-22
+
+#+author: Paula Granda, Elvis Carlosama, Jhon Tiupul, Erick Páez, Ismael Alomoto, Karely Bombon, Azaela Chango, Ethan López
+#+email: paula.granda@epn.edu.ec, elvis.carlosama@epn.edu.ec, jhon.tiupul@epn.edu.ec, erick.paez@epn.edu.ec, ismael.alomoto@epn.edu.ec, karely.bombon@epn.edu.ec, azaela.chango@epn.edu.ec, ethan.lopez@epn.edu.ec
+
+#+language: es
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 27.1 (Org mode 9.3)
+#+cite_export: biblatex
+
+#+bibliography: ./FormatoTareas/bibliography.bib
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage[spanish]{babel}
+#+LATEX_HEADER: \usepackage[backend=biber,citestyle=apa, style=apa]{biblatex}
+#+LATEX_HEADER: \setbeamersize{text margin left=1cm,text margin right=1cm}
+
+* Buses del Sistema
+** Estructuras de Interconexión 
+- Un computador formado por tres módulos fundamentales
+- Procesador (CPU): ejecuta y controla
+- Memoria: guarda datos e instrucciones
+- Entrada / Salida (E/S): conecta con el exterior
+
+Ejemplos:
+- CPU → cerebro
+- Memoria → archivo
+- E/S → teclado, pantalla, impresora
+
+** Intercambio de Información
+¿Cómo se comunican estos módulos?
+
+El conjunto de lineas que permite esa comunicación se llama estructuras de interconexión.
+
+Esta permite varios tipos de transferencia: 
+
+| Origen   | Destino   | Ejemplo                                     |
+|----------+-----------+---------------------------------------------|
+| CPU      | Memoria   | Guardar resultados                          |
+| Memoria  | CPU       | CPU lee instrucciones para ejecutarla       |
+| CPU      | E/S       | CPU envía información a pantalla, impresora |
+| E/S      | CPU       | Tecla que presionamos                       |
+| Memoria  | E/S       | DMA (acceso directo a memoria)              |
+
+* Interconexión con Buses 
+** Interconexión con Buses 
+
+- Bus = camino de comunicación común
+- Medio compartido (todos ven la información)
+- Solo un dispositivo transmite a la vez
+
+¿Cómo se implementa realmente esta comunicación?
+
+- Bus = camino de comunicación que conecta varios dispositivos
+- Característica- Medio compartido (todos ven la información)
+- En un Bus solo un dispositivo transmite a la vez
+- No es solo un cable. Formado por varias líneas.
+- Varios tipos de buses.
+- Bus del sistema conecta CPU, Memoria y E/S
+- Sistema integrado y no como partes aisladas.
+
+Ejemplo:
+- Bus = carretera interna
+- Bus = pizarra compartida
+
+** Estructura del Bus  
+** Definición y función
+- Conjunto de líneas que interconectan CPU, Memoria y E/S.
+- Grupo de 50 a 100 líneas metálicas independientes.
+- Canal único; solo un dispositivo transmite a la vez.
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[file:Imagenes/EsquemaInterconexionBus.png]]
+
+** Clasificación de líneas
+- *Líneas de Datos*: Camino físico para el transporte de datos/bits.
+- *Líneas de Dirección*: Identificación del origen o destino del dato.
+- *Líneas de Control*: Gestión de acceso y coordinación de los otros buses.
+- *Líneas de Alimentación*: Suministra energía a los módulos
+  conectados.
+  
+** Señales de control
+- *Escritura en memoria (Memory write)*
+- *Lectura de memoria (Memory read)*
+- *Escritura de E/S (I/O write)*
+- *Lectura de E/S (I/O read)*
+- *Transferencia reconocida (Transfer ACK)*
+- *Petición de bus (Bus request)*
+- *Cesión de bus (Bus grant)*
+- *Petición de interrupción (Interrupt request)*
+- *Interrupción reconocida (Interrupt ACK)*
+- *Reloj (Clock)*
+- *Inicio (Reset)*
+  
+** Estructura y evolución
+- *Líneas metálicas*: Conductores grabados en tarjetas de circuito impreso.
+- *Ranuras (Slots)*: Conexión modular para expansión y reparación.
+- *Evolución*: De chasis modulares a integración *On-chip* y
+  *On-board
+  
+#+ATTR_LATEX: :width 0.7\linewidth
+[[file:Imagenes/ImplentacionFisicaBus.png]]
+  
+** Jerarquía de Buses Múltiples 
+
+*** Definición
+- La jerarquía de buses múltiples organiza los buses del sistema en distintos niveles, de acuerdo con la velocidad y la función de los componentes conectados.
+- Este esquema surge como respuesta a las limitaciones de rendimiento de un bus único compartido.
+- Su objetivo principal es mejorar el rendimiento general del sistema y reducir los cuellos de botella, separando la comunicación rápida de la lenta.
+
+** Jerarquía de Buses Múltiples – Esquema
+#+ATTR_LATEX: :width 0.8\linewidth
+[[file:Imagenes/Jerarquia.png]]
+
+** Organización por niveles
+- Buses de alta velocidad: conectan el procesador con la memoria principal y la caché.
+- Buses de velocidad media: permiten la conexión de tarjetas y controladores especializados.
+- Buses de baja velocidad: se emplean para dispositivos de entrada y salida como almacenamiento, red y periféricos.
+- Esta organización jerárquica permite una comunicación más eficiente entre los distintos componentes del sistema.
+
+** Organización por niveles – Diagrama
+#+CAPTION:
+#+ATTR_LATEX: :width 0.85\linewidth
+[[file:Imagenes/OrganBuses.png]]
+
+** Importancia de la Jerarquía de Buses
+- Evita que los dispositivos lentos afecten el desempeño del procesador y la memoria.
+- Reduce la congestión de datos al distribuir el tráfico entre diferentes buses.
+- Mejora la eficiencia y escalabilidad del sistema.
+- La jerarquía de buses múltiples es utilizada en la mayoría de arquitecturas de computadoras modernas.
+
+** Importancia – Diagrama
+#+CAPTION:
+#+ATTR_LATEX: :width 0.85\linewidth
+[[file:Imagenes/ImporBus.png]]
+
+** Elementos de Diseño de un Bus 
+*** Definicion
+- Son las decisiones claves que determinan ¿Cómo funcionan? ¿Qué tan rapidos son? y ¿Cómo se conectan los dispositivos?
+*** Tipos de Bus
+- Las líneas de bus se pueden clasificar en dos tipos genericos
+- *Dedicadas:* Estan autorizadas permanentemente para un función, no se comparte con otras funciones.
+- *Multiplexadas:* Se le asignan varias funciones según ciertos parámetros, por lo que cambian de funsion segun el momento.
+*** Método de Arbitraje
+- En la mayoria de sistemas, mas de un modulo puede requerir el control del Bus, por lo tanto se requiere algun metodo de arbitraje,un esquema.
+- *Esquema centralizado:* Un unico dispositivo, definido como controlador o arbitro del Bus, asigna el tiempo.
+- *Esquema distribuido:* No existe controlador central, cada modulo incluye la logica de control de acceso  colabora en la transferencia del bus.
+*** Timing(Sincronizacion)
+- Define como se sincronizan los eventos en el bus, cuando se activan y cuando no.
+- *Síncrono:* Las circunstancias de los eventos en el bus se mantienen mendiante una señal de reloj.
+#+ATTR_LATEX: :width 0.6\linewidth
+[[file:Imagenes/synchronous.jpg]]
+- *Asíncrono:* Las circunstancias de un evento en un Bus se basan en las circunstancias de un evento anterior.
+#+ATTR_LATEX: :width 0.6\linewidth
+[[file:Imagenes/asynchronous.jpg]]
+*** Ancho del Bus
+- Cantidad de bits que un Bus puede transmitir simultáneamente en una sola operación.
+- *Ancho del bus de datos:* Número de bits que se transfieren en paralelo.
+- *Ancho del bus de direcciones:* Número de bits usados para direccionar memoria.
+*** Tipos de transferencia de datos
+- Describe como se mueve los datos entre la CPU, la memoria y los dispositivos de entrada/salida.
+- *Maestro-esclavo:* El maestro inicia,controla y finaliza la comunicación, el esclavo solo responde a las órdenes
+- *Esclavo-maestro:* El esclavo solicita el control del bus, se convierte temporalmente en maestro, y realiza la transferencia de datos.
+* Interconexión punto a punto
+** Interconexión punto a punto
+En un inicio se utilizaban los buses compartidos para la interconexión entre el procesador y otros componentes, sin embargo, debido a las limitaciones eléctricas encontradas al aumentar la frecuencia de los buses síncronos anchos, surge la interconexión punto a punto, que ofrece mejor latencia, mayor velocidad de datos y mejor escalabilidad.
+* QuickPath Interconnect de Intel (QPI)
+EL QPI fue diseñada para superar las limitaciones de los buses antiguos en sistemas de alto reendimiento y multinúcleo. 
+El QPI no solo conecta núcleos entre sí, sino que vincula los procesadores con un I/O Hub (IOH), donde actúa como traductor entre el protocolo QPI y los dispositivos periféricos que usan PCI Express. 
+** Características:
+- Varios componentes del sistema se conectan mediante pares con otros componentes, eliminando la necesidad del arbitraje.
+- Los datos se envían como una secuencia de paquetes con encabezados de control y códigos de control de errores, de forma que la computadora pueda detectar y arreglar errores mientras los datos viajan.
+- Utilizan una arquitectura de protocolo en capas para dividir por niveles de responsabilidad y evitar que los datos se pierdan debido a interferencias.
+- Un puerto QPI opera a 6.4 GT/s transferencias por segundo.
+- Cada puerto tiene 20 carriles de datos y una de reloj en cada dirrección.
+- Los flits de 80 bits se dividen y se envían a través de los carriles físicos en formato ¨round-robin¨.
+* Arquitectura de protocolo en capas
+#+ATTR_LATEX: :width 0.7\linewidth
+[[file:Imagenes/ArquiProtocolo.png]]
+- *Capa Física:* Consta de los cables que transportan los bits como señales eléctricas. Su unidad de transferencia es el phit de 20 bits. Contiene la señalizacion diferencial de bajo voltaje(LVDS).
+#+ATTR_LATEX: :width 0.6\linewidth
+[[file:Imagenes/physical%20layer.png]]
+- *Capa de Enlace:* Responsable de que la transmisión sea fiable y utiliza mecanismos de detección de errores. La unidad de transferencia es el flit de 80 bits que se utiliza para el control de errores.
+#+ATTR_LATEX: :width 0.6\linewidth
+[[file:Imagenes/link%20layer.png]]
+- *Capa de Enrutamiento:* Define el camino que debe seguir un paquete para llegar al destino.
+- *Capa de Protocolo:* Conjunto de reglas para intercambiar paquetes entre dispositivos.
+** IOH
+Además, le interconexión punto a punto sirve de puente para conectar el procesador con el resto de la computadora a través de un intermediario denominado IOH, el cual convierte el protocolo QPI del procesador al protocolo PCI Express, que es el estándar de todos los dispositivos externos.
+** Memoria RAM
+Sin embargo, la Memoria RAM tiene su propio bus dedicado ya que el procesador necesita leer datos de la RAM a una alta velocidad.
+
+** PCI 
+
+- Bus popular de alto ancho de banda, independiente del procesador.
+- Ofrece un mejor rendimiento del sistema para subsistemas de E/S de alta velocidad, por ejemplo : adaptadores gráficos, controladores de red y controladores de disco.
+- PCI (Intel, 1990), Intel comenzó a trabajar en PCI en 1990 para sus sistemas basados en Pentium. Pronto liberó todas las patentes al dominio público y promovió la creación de una asociación industrial, el PCI Special Interest Group (SIG), para desarrollar y mantener la compatibilidad de las especificaciones PCI. Gracias a esto, PCI ha sido ampliamente adoptado y se utiliza cada vez más en computadoras personales, estaciones de trabajo y servidores. 
+- Al estar en dominio público y contar con el apoyo de gran parte de la industria de microprocesadores y periféricos, los productos PCI fabricados por diferentes proveedores son compatibles.
+
+** PCI express
+
+-  PCIe, al igual que QPI, es un esquema de interconexión punto a punto destinado a reemplazar los buses tradicionales como PCI.
+-  Un requisito clave de PCIe es la alta capacidad para soportar dispositivos de E/S de mayor velocidad, como Ethernet Gigabit.
+-  PCIe incorpora mecanismos para manejar flujos de datos en tiempo real, lo cual resulta esencial en aplicaciones como video bajo demanda, distribución de audio, comunicaciones y sistemas embebidos.
+-  PCIe puede gestionar múltiples transferencias simultáneas y priorizar aquellas que requieren atención inmediata, garantizando un rendimiento adecuado en entornos con altas exigencias de velocidad y baja latencia.
+
+* Arquitectura Física y Lógica de PCIe
+
+-  La arquitectura física y lógica de PCIe se organiza alrededor del root complex (chipset), que conecta procesador y memoria con los dispositivos PCIe.
+-  Actúa como buffer para manejar diferencias de velocidad entre controladores de E/S y CPU/memoria, y traduce los formatos de transacción PCIe a las señales del procesador y la memoria. El chipset soporta múltiples puertos PCIe que pueden conectarse directamente a dispositivos, a switches que gestionan varios flujos, o a otros tipos de endpoints.
+
+* Arquitectura Física y Lógica de PCIe
+#+ATTR_LATEX: :width 0.5\textwidth
+[[file:Imagenes/ConfPCIe.png]]
+
+* Arquitectura Física y Lógica de PCIe
+
+Al igual que QPI, PCIe se organiza en una arquitectura de protocolos en capas:
+
+- *Capa física:* cables, señales y circuitería para transmitir bits.
+- *Capa de enlace de datos:* asegura transmisión confiable y control de flujo (DLLPs).
+- *Capa de transacción:* gestiona transferencias de datos y control de flujo mediante paquetes (TLPs).
+- *Capas de software superiores:* generan solicitudes de lectura/escritura que viajan como paquetes hacia los dispositivos de E/S.
+
+* Arquitectura Física y Lógica de PCIe
+#+ATTR_LATEX: :width 0.5\textwidth
+[[file:Imagenes/PCIeCapaFisica.png]]
+
+* Capa física
+
+- PCIe es una arquitectura punto a punto similar a QPI. Cada puerto PCIe está formado por lanes (carriles) bidireccionales, que transmiten datos mediante señalización diferencial sobre pares de cables. Un puerto puede tener 1, 4, 8, 16 o hasta 32 lanes.
+- A diferencia de QPI, PCIe no usa la línea de reloj para sincronizar los bits, por lo que emplea dos técnicas:
+    *Scrambling:* hace que los datos parezcan aleatorios, evitando largas secuencias de 1s o 0s y mejorando la sincronización.
+    *Encoding 128b/130b:* añade un encabezado de 2 bits para distinguir bloques de datos y bloques de control.
+* Capa física
+#+ATTR_LATEX: :width 0.5\textwidth
+[[file:Imagenes/PCIeCapaFisica2.png]]
+
+* Proceso de transmisión
+
+- *Scrambler:* aleatoriza los datos.
+- *Encoder 128b/130b:* convierte 128 bits en 130 bits.
+- *Conversión paralelo-serial:* envía los bits uno a uno por señal diferencial.
+- *En el receptor:* sincronización de reloj, conversión serial-paralelo, decodificación y descrambling para recuperar los datos originales.
+Gracias a estas técnicas, PCIe 3.0 alcanza velocidades de hasta 16 GB/s, y cada transmisión comienza y termina con una secuencia de 8 bits de enmarcado para facilitar la sincronización.
+
+* Proceso de transmisión
+#+ATTR_LATEX: :width 0.5\textwidth
+[[file:Imagenes/ProcesoDeTransmision.png]]
+
+* Estructura de Paquetes en PCI Express
+
+*Puntos Clave:* 
+- PCle utiliza una arquitectura basada en capas.
+- La comunicación se realiza mediante paquetes, no solo señales eléctricas.
+- Los paquetes principales son TLP y DLLP.
+
+* Ensamblaje de Paquetes de Transacción
+El software de capa superior envia datos a la Capa de Transacción(TL).
+#+ATTR_LATEX: :width 0.5\textwidth
+[[file:Imagenes/DiagramaTLP.png]]
+
+*Campos del TLP:* 
+- *Header:* Define el tipo de paquete y la información de enrutamiento.
+- *Data:* Carga útil de hasta 4096 bytes.
+- *ECRC:* Comprobación de errores opcional de extremo a extremo.
+
+* Fiabilidad y Control en el Enlace (DLL)
+Garantizar la entrega fiable de paquetes a través del enlace PCIe.
+*Funciones principales:* 
+- Añade un número de secuencia (16 bits) y un LCRC (32 bits) al TLP.
+- Gestiona los DLLP (Data Link Layer Packets) para control del enlace.
+*Tipos de DLLP:* 
+- Paquetes de Control de Flujo (Flow Control).
+- Gestión de Energía (Power Management).
+- ACK/NAK (Confirmación de recepción o error).
+
+* ¿Cómo viaja un paquete?
+*En cada nodo intermedio (Switch):* 
+- La capa de enlace (DLL) comprueba el LCRC y el número de secuencia.
+- Si no hay errores: Pasa el paquete a la capa de transacción para ser enrutado.
+- Si hay errores: Se pide retransmisión (NAK).
+*En el destino:* 
+- La capa de transacción procesa los datos y los entrega al software.
+
+* Referencias
+** Bibliografía
+
+Stallings, W. (2006). *Arquitectura de computadores y organización* (7ª ed., pp. 99–119). Pearson Educación.
+
+Stallings, W. (2022). *Computer organization and architecture* (11th ed., pp. 116–131). Pearson.
+
+#+print_bibliography:
