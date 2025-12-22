@@ -46,8 +46,38 @@
 
 * Buses del Sistema (Sección)
 ** Estructuras de Interconexión (Nombre Diapositiva)(E1, 7, 97)
+- Un computador es un conjunto de módulos
+- Procesador (CPU): ejecuta y controla
+- Memoria: guarda datos e instrucciones
+- Entrada / Salida (E/S): conecta con el exterior
+- Interconexión = líneas que permiten comunicarse
+
+Ejemplos:
+- CPU → cerebro
+- Memoria → archivo
+- E/S → teclado, pantalla, impresora
+
+
+** Intercambio de Información
+| Origen   | Destino   | Ejemplo                     |
+|----------+-----------+-----------------------------|
+| Memoria  | CPU       | Leer instrucciones          |
+| CPU      | Memoria   | Guardar resultados          |
+| E/S      | CPU       | Teclado, mouse              |
+| CPU      | E/S       | Pantalla, impresora         |
+| Memoria  | E/S       | DMA (transferencia directa) |
+
 * Interconexión con Buses (Sección)
 ** Interconexión con Buses (E1, 7, 99)
+- Bus = camino de comunicación común
+- Medio compartido (todos ven la información)
+- Solo un dispositivo transmite a la vez
+- Bus del sistema conecta CPU, Memoria y E/S
+
+Ejemplo:
+- Bus = carretera interna
+- Bus = pizarra compartida
+
 ** Estructura del Bus  (E1, 7, 99)
 ** Jerarquía de Buses Múltiples (E2, 7, 102)
 
