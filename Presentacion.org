@@ -10,8 +10,8 @@
 
 #+title: S8-Buses-del-Sistema
 #+date: 2025-12-22
-#+author: Paula Granda, Elvis Carlosama, 
-#+email: paula.granda@epn.edu.ec, elvis.carlosama@epn.edu.ec
+#+author: Paula Granda, Elvis Carlosama, Jhon Tiupul
+#+email: paula.granda@epn.edu.ec, elvis.carlosama@epn.edu.ec, jhon.tiupul@epn.edu.ec
 #+language: es
 #+select_tags: export
 #+exclude_tags: noexport
