@@ -79,7 +79,10 @@ Esta permite varios tipos de transferencia:
 - Bus = camino de comunicación que conecta varios dispositivos
 - Característica- Medio compartido (todos ven la información)
 - En un Bus solo un dispositivo transmite a la vez
+- No es solo un cable. Formado por varias líneas.
+- Varios tipos de buses.
 - Bus del sistema conecta CPU, Memoria y E/S
+- Sistema integrado y no como partes aisladas.
 
 Ejemplo:
 - Bus = carretera interna
