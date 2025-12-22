@@ -178,10 +178,15 @@ Ejemplo:
 ** Interconexión punto a punto
 En un inicio se utilizaban los buses compartidos para la interconexión entre el procesador y otros componentes, sin embargo, debido a las limitaciones eléctricas encontradas al aumentar la frecuencia de los buses síncronos anchos, surge la interconexión punto a punto, que ofrece mejor latencia, mayor velocidad de datos y mejor escalabilidad.
 * QuickPath Interconnect de Intel (QPI)
+EL QPI fue diseñada para superar las limitaciones de los buses antiguos en sistemas de alto reendimiento y multinúcleo. 
+El QPI no solo conecta núcleos entre sí, sino que vincula los procesadores con un I/O Hub (IOH), donde actúa como traductor entre el protocolo QPI y los dispositivos periféricos que usan PCI Express. 
 ** Características:
 - Varios componentes del sistema se conectan mediante pares con otros componentes, eliminando la necesidad del arbitraje.
 - Los datos se envían como una secuencia de paquetes con encabezados de control y códigos de control de errores, de forma que la computadora pueda detectar y arreglar errores mientras los datos viajan.
 - Utilizan una arquitectura de protocolo en capas para dividir por niveles de responsabilidad y evitar que los datos se pierdan debido a interferencias.
+- Un puerto QPI opera a 6.4 GT/s transferencias por segundo.
+- Cada puerto tiene 20 carriles de datos y una de reloj en cada dirrección.
+- Los flits de 80 bits se dividen y se envían a través de los carriles físicos en formato ¨round-robin¨.
 * Arquitectura de protocolo en capas
 [[file:Imagenes/ArquiProtocolo.png]]
 - *Capa Física:* Consta de los cables que transportan los bits como señales eléctricas. Su unidad de transferencia es el phit de 20 bits.
