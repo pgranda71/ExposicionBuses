@@ -10,8 +10,9 @@
 
 #+title: S8-Buses-del-Sistema
 #+date: 2025-12-22
-#+author: Paula Granda, Elvis Carlosama, Jhon Tiupul,Jeriel Lopez
-#+email: paula.granda@epn.edu.ec, elvis.carlosama@epn.edu.ec, jhon.tiupul@epn.edu.ec, jerielopez04@gmail.com
+<<<<<<< HEAD
+#+author: Paula Granda, Elvis Carlosama, Jhon Tiupul,Jeriel López,Erick Páez
+#+email: paula.granda@epn.edu.ec, elvis.carlosama@epn.edu.ec, jhon.tiupul@epn.edu.ec, jerielopez04@gmail.com,erick.paez@epn.edu.ec
 
 #+language: es
 #+select_tags: export
@@ -75,12 +76,12 @@ Esta permite varios tipos de transferencia:
 
 * Interconexión con Buses (Sección)
 ** Interconexión con Buses (E1, 7, 99)
-<<<<<<< HEAD
+
 
 - Bus = camino de comunicación común
 - Medio compartido (todos ven la información)
 - Solo un dispositivo transmite a la vez
-=======
+
 ¿Cómo se implementa realmente esta comunicación?
 
 - Bus = camino de comunicación que conecta varios dispositivos
@@ -88,7 +89,6 @@ Esta permite varios tipos de transferencia:
 - En un Bus solo un dispositivo transmite a la vez
 - No es solo un cable. Formado por varias líneas.
 - Varios tipos de buses.
->>>>>>> 2505a3ae8f18eede799c53c4c82c9e02a08fe83c
 - Bus del sistema conecta CPU, Memoria y E/S
 - Sistema integrado y no como partes aisladas.
 
