@@ -8,7 +8,7 @@
 #+beamer_outer_theme:
 #+beamer_header:
 
-#+title: S8-Buses-del-Sistema
+#+title: Buses-del-Sistema
 #+date: 2025-12-22
 
 #+author: Paula Granda, Elvis Carlosama, Jhon Tiupul, Erick Páez, Ismael Alomoto, Karely Bombon, Azaela Chango, Ethan López
@@ -26,9 +26,6 @@
 #+LATEX_HEADER: \usepackage[spanish]{babel}
 #+LATEX_HEADER: \usepackage[backend=biber,citestyle=apa, style=apa]{biblatex}
 
-
-  - \textcite{stallings2022computer}, 11ava edición, 2022, English,
-    páginas 116 a 131 [cite:@stallings2022computer].
 
 * Buses del Sistema
 ** Estructuras de Interconexión 
