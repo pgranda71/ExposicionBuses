@@ -63,13 +63,13 @@ El conjunto de lineas que permite esa comunicación se llama estructuras de inte
 
 Esta permite varios tipos de transferencia: 
 
-| Origen   | Destino   | Ejemplo                     |
-|----------+-----------+-----------------------------|
-| Memoria  | CPU       | Leer instrucciones          |
-| CPU      | Memoria   | Guardar resultados          |
-| E/S      | CPU       | Teclado, mouse              |
-| CPU      | E/S       | Pantalla, impresora         |
-| Memoria  | E/S       | DMA (transferencia directa) |
+| Origen   | Destino   | Ejemplo                                     |
+|----------+-----------+---------------------------------------------|
+| CPU      | Memoria   | Guardar resultados                          |
+| Memoria  | CPU       | CPU lee instrucciones para ejecutarla       |
+| CPU      | E/S       | CPU envía información a pantalla, impresora |
+| E/S      | CPU       | Tecla que presionamos                       |
+| Memoria  | E/S       | DMA (acceso directo a memoria)              |
 
 * Interconexión con Buses (Sección)
 ** Interconexión con Buses (E1, 7, 99)
