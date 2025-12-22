@@ -191,7 +191,9 @@ El QPI no solo conecta núcleos entre sí, sino que vincula los procesadores con
 - *Capa de Enlace:* Responsable de que la transmisión sea fiable y utiliza mecanismos de detección de errores. La unidad de transferencia es el flit de 80 bits que se utiliza para el control de errores.
 [[file:Imagenes/link%20layer.png]]
 - *Capa de Enrutamiento:* Define el camino que debe seguir un paquete para llegar al destino.
+[[file:Imagenes/RoutingLayer.png]]
 - *Capa de Protocolo:* Conjunto de reglas para intercambiar paquetes entre dispositivos.
+[[file:Imagenes/ProtocolLayer.png]]
 ** IOH
 Además, le interconexión punto a punto sirve de puente para conectar el procesador con el resto de la computadora a través de un intermediario denominado IOH, el cual convierte el protocolo QPI del procesador al protocolo PCI Express, que es el estándar de todos los dispositivos externos.
 ** Memoria RAM
