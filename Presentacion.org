@@ -9,7 +9,7 @@
 #+beamer_header:
 
 #+title: Buses-del-Sistema
-#+date: 2025-12-22
+#+date: 2026-01-09
 
 #+author: Paula Granda, Elvis Carlosama, Jhon Tiupul, Erick Páez, Ismael Alomoto, Karely Bombon, Azaela Chango, Ethan López
 #+email: paula.granda@epn.edu.ec, elvis.carlosama@epn.edu.ec, jhon.tiupul@epn.edu.ec, erick.paez@epn.edu.ec, ismael.alomoto@epn.edu.ec, karely.bombon@epn.edu.ec, azaela.chango@epn.edu.ec, ethan.lopez@epn.edu.ec
