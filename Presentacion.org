@@ -44,7 +44,7 @@ Ejemplos:
 - Memoria → archivo
 - E/S → teclado, pantalla, impresora
 
-
+* Buses del Sistema
 ** Intercambio de Información
 ¿Cómo se comunican estos módulos?
 
@@ -60,13 +60,10 @@ Esta permite varios tipos de transferencia:
 | E/S      | CPU       | Tecla que presionamos                       |
 | Memoria  | E/S       | DMA (acceso directo a memoria)              |
 
+[[file:Imagenes/modulos.png]]
+
+
 * Interconexión con Buses 
-** Interconexión con Buses 
-
-
-- Bus = camino de comunicación común
-- Medio compartido (todos ven la información)
-- Solo un dispositivo transmite a la vez
 
 ¿Cómo se implementa realmente esta comunicación?
 
